@@ -1,0 +1,147 @@
+<div class="container weather" *ngIf="forecast">
+    <div class="row">
+        <div class="card card-main shadow" 
+        [ngClass]="{'thunderstorm':forecast[0].weather[0].main=='Thunderstorm',
+                    'drizzle': forecast[0].weather[0].main=='Drizzle',
+                    'rain': forecast[0].weather[0].main=='Rain',
+                    'snow': forecast[0].weather[0].main=='Snow',
+                    'mist': forecast[0].weather[0].main=='Mist' 
+                    || forecast[0].weather[0].main=='Smoke'
+                    || forecast[0].weather[0].main=='Haze'
+                    || forecast[0].weather[0].main=='Dust'
+                    || forecast[0].weather[0].main=='Fog'
+                    || forecast[0].weather[0].main=='Ash'
+                    || forecast[0].weather[0].main=='Squall',
+                    'sand': forecast[0].weather[0].main=='Sand',
+                    'tornado': forecast[0].weather[0].main=='Tornado',
+                    'clear': forecast[0].weather[0].main=='Clear',
+                    'clouds': forecast[0].weather[0].main=='Clouds'}">
+            <div class="card-header card-main__header">
+                <div class="card-main__header__title"> Bogotá 
+                    <p class="card-main__header__title__date">{{forecast[0].dateFormat|date}}</p>
+                </div>
+            </div>
+            <div class="card-body card-main__body">
+                <div class="row">
+                    <div class="col-5 card-main__body__icon icon"></div>
+                    <div class="col-7 card-main__body__temp temp">
+                        <p>{{forecast[0].weather[0].main}}
+                        {{forecast[0].main.temp - 273.15|number:'1.0'}}°C</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-6 forecast shadow">
+            <div class="row">
+                <p class="forecast__title">3 Days Forecast</p> 
+            </div>
+            <div class="row next-days shadow" 
+            [ngClass]="{'thunderstorm':forecast[8].weather[0].main=='Thunderstorm',
+                        'drizzle': forecast[8].weather[0].main=='Drizzle',
+                        'rain': forecast[8].weather[0].main=='Rain',
+                        'snow': forecast[8].weather[0].main=='Snow',
+                        'mist': forecast[8].weather[0].main=='Mist' 
+                        || forecast[8].weather[0].main=='Smoke'
+                        || forecast[8].weather[0].main=='Haze'
+                        || forecast[8].weather[0].main=='Dust'
+                        || forecast[8].weather[0].main=='Fog'
+                        || forecast[8].weather[0].main=='Ash'
+                        || forecast[8].weather[0].main=='Squall',
+                        'sand': forecast[8].weather[0].main=='Sand',
+                        'tornado': forecast[8].weather[0].main=='Tornado',
+                        'clear': forecast[8].weather[0].main=='Clear',
+                        'clouds': forecast[8].weather[0].main=='Clouds'}">
+                <div class="col next-days__place">
+                    <p class="">Bogotá</p> <p class="">{{forecast[8].dateFormat|date}}</p>
+                </div>
+                <div class="col">
+                    <div class="row next-days__img icon"></div> 
+                    <div class="row"><p class="next-days__temp temp">{{forecast[8].weather[0].main}}
+                        {{forecast[8].main.temp - 273.15|number:'1.0'}}°C</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row next-days shadow" 
+            [ngClass]="{'thunderstorm':forecast[16].weather[0].main=='Thunderstorm',
+                        'drizzle': forecast[16].weather[0].main=='Drizzle',
+                        'rain': forecast[16].weather[0].main=='Rain',
+                        'snow': forecast[16].weather[0].main=='Snow',
+                        'mist': forecast[16].weather[0].main=='Mist' 
+                        || forecast[16].weather[0].main=='Smoke'
+                        || forecast[16].weather[0].main=='Haze'
+                        || forecast[16].weather[0].main=='Dust'
+                        || forecast[16].weather[0].main=='Fog'
+                        || forecast[16].weather[0].main=='Ash'
+                        || forecast[16].weather[0].main=='Squall',
+                        'sand': forecast[16].weather[0].main=='Sand',
+                        'tornado': forecast[16].weather[0].main=='Tornado',
+                        'clear': forecast[16].weather[0].main=='Clear',
+                        'clouds': forecast[16].weather[0].main=='Clouds'}">
+                <div class="col next-days__place">
+                    <p class="">Bogotá</p> <p class="">{{forecast[16].dateFormat|date}}</p>
+                </div>
+                <div class="col">
+                    <div class="row next-days__img icon"></div> 
+                    <div class="row"><p class="next-days__temp temp">{{forecast[16].weather[0].main}}
+                        {{forecast[16].main.temp - 273.15|number:'1.0'}}°C</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row next-days shadow"
+            [ngClass]="{'thunderstorm':forecast[24].weather[0].main=='Thunderstorm',
+                        'drizzle': forecast[24].weather[0].main=='Drizzle',
+                        'rain': forecast[24].weather[0].main=='Rain',
+                        'snow': forecast[24].weather[0].main=='Snow',
+                        'mist': forecast[24].weather[0].main=='Mist' 
+                        || forecast[24].weather[0].main=='Smoke'
+                        || forecast[24].weather[0].main=='Haze'
+                        || forecast[24].weather[0].main=='Dust'
+                        || forecast[24].weather[0].main=='Fog'
+                        || forecast[24].weather[0].main=='Ash'
+                        || forecast[24].weather[0].main=='Squall',
+                        'sand': forecast[24].weather[0].main=='Sand',
+                        'tornado': forecast[24].weather[0].main=='Tornado',
+                        'clear': forecast[24].weather[0].main=='Clear',
+                        'clouds': forecast[24].weather[0].main=='Clouds'}">
+                <div class="col next-days__place">
+                    <p class="">Bogotá</p> <p class="">{{forecast[24].dateFormat|date}}</p>
+                </div>
+                <div class="col">
+                    <div class="row next-days__img icon"></div> 
+                    <div class="row"><p class="next-days__temp temp">{{forecast[24].weather[0].main}}
+                        {{forecast[24].main.temp - 273.15|number:'1.0'}}°C</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col paris shadow" 
+            [ngClass]="{'thunderstorm':parisWeather.weather[0].main=='Thunderstorm',
+                        'drizzle': parisWeather.weather[0].main=='Drizzle',
+                        'rain': parisWeather.weather[0].main=='Rain',
+                        'snow': parisWeather.weather[0].main=='Snow',
+                        'mist': parisWeather.weather[0].main=='Mist' 
+                        || parisWeather.weather[0].main=='Smoke'
+                        || parisWeather.weather[0].main=='Haze'
+                        || parisWeather.weather[0].main=='Dust'
+                        || parisWeather.weather[0].main=='Fog'
+                        || parisWeather.weather[0].main=='Ash'
+                        || parisWeather.weather[0].main=='Squall',
+                        'sand': parisWeather.weather[0].main=='Sand',
+                        'tornado': parisWeather.weather[0].main=='Tornado',
+                        'clear': parisWeather.weather[0].main=='Clear',
+                        'clouds': parisWeather.weather[0].main=='Clouds'}">
+            <div class="row paris__title">
+                <p>{{parisWeather.name}}</p>
+            </div>
+            <div class="row">
+                <div class="col paris__img icon"></div>
+                <div class="col paris__temp temp">
+                    {{parisWeather.weather[0].main}}
+                    {{parisWeather.main.temp - 273.15|number:'1.0'}}°C</div>
+            </div>
+        </div>
+    </div>
+</div>

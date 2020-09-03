@@ -1,0 +1,47 @@
+// //BREAKPOINTS
+$breakpoints-min : (
+  xs-small: 576px,
+  small : 768px,
+  medium: 992px,
+  large : 1200px,
+);
+$breakpoints-max : (
+    xs-small: 575px,
+    small: 767px,
+    medium: 991px,
+    large: 1199px,
+);
+
+//Min
+@mixin mq-min($mq-breakpoint, $mq-breakpoints: $breakpoints-min) {
+    // If $mq-breakpoint is a key that exists in
+    // $mq-breakpoints, get and use the value
+    @if map-has-key($mq-breakpoints, $mq-breakpoint) {
+      $mq-breakpoint: map-get($mq-breakpoints, $mq-breakpoint);
+    }
+
+    @media (min-width: #{$mq-breakpoint}) {
+      @content;
+    }
+}
+//Max
+@mixin mq-max($mq-breakpoint, $mq-breakpoints: $breakpoints-max) {
+    // If $mq-breakpoint is a key that exists in
+    // $mq-breakpoints, get and use the value
+    @if map-has-key($mq-breakpoints, $mq-breakpoint) {
+      $mq-breakpoint: map-get($mq-breakpoints, $mq-breakpoint);
+    }
+
+    @media (max-width: #{$mq-breakpoint}) {
+      @content;
+    }
+}
+
+//Min-Max
+@mixin mq-min-max($min-breakpoint, $max-breakpoint) {
+    $min-breakpoint-value: map-get(map-get($breakpoints-min, $min-breakpoint), min-width);
+    $max-breakpoint-value: map-get(map-get($breakpoints-max, $max-breakpoint), max-width);
+    @media (min-width: #{$min-breakpoint-value}) and (max-width: #{$max-breakpoint-value}) {
+        @content;
+    }
+}

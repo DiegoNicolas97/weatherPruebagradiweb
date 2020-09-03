@@ -1,0 +1,9 @@
+$color-primary: #78BFA5;
+$color-sun: #FEA832;
+html,body{
+    background-color: $color-primary;
+    //background-color: whi;
+}
+@import "assets/scss/var-mixins",
+        "assets/scss/home.scss",
+        "assets/scss/weather.scss"
