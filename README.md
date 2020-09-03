@@ -1,5 +1,6 @@
 # Pruebagradiweb
-
+Proyecto realizado con Angular 9
+Primero npm install para instalar las dependencias, despues ng serve para ejecturar :)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
 ## Development server
